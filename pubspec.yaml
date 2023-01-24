@@ -43,8 +43,19 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+   - images/Chord Playing Image.jpg
+   - images/Sheet Music Image.png
+   - images/Sheet Music Reading.jpg
+   - images/piano-technique.jpg
+
+  fonts: 
+      - family: Caveat
+        fonts:
+          - asset: fonts/Caveat-Bold.ttf
+          - asset: fonts/Caveat-Medium.ttf
+          - asset: fonts/Caveat-Regular.ttf
+          - asset: fonts/Caveat-SemiBold.ttf
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
