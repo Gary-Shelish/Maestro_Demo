@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:maestrohomescreen/lessons/lesson_card_selection.dart';
 import 'package:maestrohomescreen/timer.dart';
 
@@ -10,6 +11,12 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+
     TabBar _tabBar = const TabBar(tabs: [
       Tab(child: Text("Lesson", style: TextStyle(fontSize: 25.0))),
       Tab(child: Text("Practice", style: TextStyle(fontSize: 25.0))),
