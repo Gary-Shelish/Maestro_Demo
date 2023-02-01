@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  fluttertoast: ^8.1.2
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,7 @@ flutter:
    - images/Sheet Music Image.png
    - images/Sheet Music Reading.jpg
    - images/piano-technique.jpg
+   - images/Gogi.PNG
 
   fonts: 
       - family: Caveat
