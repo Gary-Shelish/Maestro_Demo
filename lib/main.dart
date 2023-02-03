@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/lessons/lesson_card_selection.dart';
 import 'package:maestrohomescreen/timer.dart';
+import 'package:maestrohomescreen/songs.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           LessonCardSelection(),
           Text("Practice",
               style: TextStyle(fontSize: 25.0, color: Colors.white)),
-          Text("Songs", style: TextStyle(color: Colors.white)),
+          Songs(),
           Timer()
         ]),
       ),
