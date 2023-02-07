@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maestrohomescreen/lessons/lesson_card.dart';
-import 'package:maestrohomescreen/lessons/sheet_music_reading.dart';
+import 'package:maestrohomescreen/lessons_tab/lesson_card.dart';
+import 'package:maestrohomescreen/lessons_tab/sheet_music_reading.dart';
 
 class LessonCardSelection extends StatelessWidget {
   const LessonCardSelection({Key? key}) : super(key: key);

@@ -50,6 +50,7 @@ flutter:
    - images/Sheet Music Reading.jpg
    - images/piano-technique.jpg
    - images/Gogi.PNG
+   - assets/
 
   fonts: 
       - family: Caveat
