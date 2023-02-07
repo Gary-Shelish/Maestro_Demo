@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.maestrohomescreen">
+    package="us.binarychaos.maestro">
    <application
         android:label="maestrohomescreen"
         android:name="${applicationName}"
