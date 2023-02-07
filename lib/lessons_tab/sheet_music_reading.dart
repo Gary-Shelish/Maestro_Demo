@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:maestrohomescreen/lessons_tab/Level_Selection/smrLessons.dart';
 
 class SheetMusicReading extends StatelessWidget {
   const SheetMusicReading({Key? key}) : super(key: key);
@@ -12,17 +12,9 @@ class SheetMusicReading extends StatelessWidget {
       backgroundColor: const Color(0xfff2f2f2),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            SizedBox(
-              height: 100,
-              width: 100,
-              child: Card(child: Text('Hello World!')),
-            ),
-            SizedBox(
-              height: 2,
-              child: Center(child: Text('Sheet Music Reading')),
-            ),
+            LevelCard(title: "Blah Blah"),
           ],
         ),
       ),

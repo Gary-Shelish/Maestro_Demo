@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maestrohomescreen/lessons/lesson_card_selection.dart';
+import 'package:maestrohomescreen/lessons_tab/lesson_card_selection.dart';
 import 'package:maestrohomescreen/timer.dart';
 import 'package:maestrohomescreen/songs.dart';
 
