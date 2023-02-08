@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maestrohomescreen/lessons_tab/Level_Selection/smrLessons.dart';
+import 'package:maestrohomescreen/eric/black_keys.dart';
+import 'package:maestrohomescreen/eric/white_keys.dart';
 
 class SheetMusicReading extends StatelessWidget {
   const SheetMusicReading({Key? key}) : super(key: key);
@@ -13,8 +14,12 @@ class SheetMusicReading extends StatelessWidget {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            LevelCard(title: "Blah Blah"),
+          children: [
+            TextButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BlackKeys())),
+                child: const Text('Black Keys')),
+            TextButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WhiteKeys())),
+              child: const Text('White Keys'),
+            ),
           ],
         ),
       ),
