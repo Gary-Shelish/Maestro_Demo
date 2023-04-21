@@ -1,11 +1,18 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/levels/DNote_Test.dart';
 import 'package:maestrohomescreen/levels/correct.dart';
 import 'package:maestrohomescreen/levels/incorrect.dart';
+import 'dart:math';
 
+Random random = Random();
+int randomNumber = random.nextInt(2);
+var intValue = Random().nextInt(2);
 
 class CNoteTest extends StatefulWidget {
   const CNoteTest({Key? key}) : super(key: key);
+  @override
   _CNoteTestState createState() => _CNoteTestState();
 }
 
@@ -44,39 +51,99 @@ class _CNoteTestState extends State<CNoteTest> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Spacer(),
-                  ElevatedButton(
-                      child: const Text('C'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const Correct(DNoteTest())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('C'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Correct(DNoteTest())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('D'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(CNoteTest())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('E'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(CNoteTest())));
+                              }),
                   const Spacer(
                     flex: 2,
                   ),
-                  ElevatedButton(
-                      child: const Text('D'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const Incorrect(CNoteTest())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('E'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Incorrect(CNoteTest())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('C'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Correct(DNoteTest())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('D'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(CNoteTest())));
+                              }),
                   const Spacer(
                     flex: 2,
                   ),
-                  ElevatedButton(
-                      child: const Text('E'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const Incorrect(CNoteTest())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('D'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Incorrect(CNoteTest())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('E'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(CNoteTest())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('C'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Correct(DNoteTest())));
+                              }),
                   const Spacer()
                 ],
               ),

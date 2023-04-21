@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/levels/CNote_Test.dart';
+import 'package:maestrohomescreen/levels/FNote_Test.dart';
 import 'package:maestrohomescreen/levels/F_Test.dart';
-
 
 class Congradulations2 extends StatefulWidget {
   const Congradulations2({Key? key}) : super(key: key);
+  @override
   _Congradulations2State createState() => _Congradulations2State();
 }
 
@@ -38,10 +39,8 @@ class _Congradulations2State extends State<Congradulations2> {
                     style: TextStyle(fontSize: 25),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const FTest()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const FTest()));
                   }),
               const Spacer(
                 flex: 2,
@@ -55,7 +54,7 @@ class _Congradulations2State extends State<Congradulations2> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CNoteTest()));
+                            builder: (context) => const FNoteTest()));
                   }),
               const Spacer(flex: 2),
             ],

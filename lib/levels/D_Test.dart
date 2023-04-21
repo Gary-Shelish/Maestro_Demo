@@ -1,12 +1,18 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/levels/E_Test.dart';
 import 'package:maestrohomescreen/levels/incorrect.dart';
-
 import 'correct.dart';
+import 'dart:math';
 
+Random random = Random();
+int randomNumber = random.nextInt(2);
+var intValue = Random().nextInt(2);
 
 class DTest extends StatefulWidget {
   const DTest({Key? key}) : super(key: key);
+  @override
   _DTestState createState() => _DTestState();
 }
 
@@ -45,38 +51,99 @@ class _DTestState extends State<DTest> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Spacer(),
-                  ElevatedButton(
-                      child: const Text('C'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const Incorrect(DTest())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('C'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Incorrect(DTest())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('D'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Correct(E_Test())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('E'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(DTest())));
+                              }),
                   const Spacer(
                     flex: 2,
                   ),
-                  ElevatedButton(
-                      child: const Text('D'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Correct(E_Test())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('E'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Incorrect(DTest())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('C'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(DTest())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('D'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Correct(E_Test())));
+                              }),
                   const Spacer(
                     flex: 2,
                   ),
-                  ElevatedButton(
-                      child: const Text('E'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const Incorrect(DTest())));
-                      }),
+                  (intValue == 0)
+                      ? ElevatedButton(
+                          child: const Text('D'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const Correct(E_Test())));
+                          })
+                      : (intValue == 1)
+                          ? ElevatedButton(
+                              child: const Text('E'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(DTest())));
+                              })
+                          : ElevatedButton(
+                              child: const Text('C'),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Incorrect(DTest())));
+                              }),
                   const Spacer()
                 ],
               ),

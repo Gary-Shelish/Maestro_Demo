@@ -4,6 +4,7 @@ class Incorrect extends StatefulWidget {
   const Incorrect(this.prevPage, {Key? key}) : super(key: key);
 
   final Widget prevPage;
+  @override
   _IncorrectState createState() => _IncorrectState();
 }
 
@@ -15,15 +16,15 @@ class _IncorrectState extends State<Incorrect> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Spacer(),
+          const Spacer(),
           const Text('Incorrect', style: TextStyle(fontSize: 50)),
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(
+              const Spacer(
                 flex: 2,
               ),
               ElevatedButton(
@@ -37,7 +38,7 @@ class _IncorrectState extends State<Incorrect> {
                         MaterialPageRoute(
                             builder: (context) => widget.prevPage));
                   }),
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
             ],
           )
         ]),

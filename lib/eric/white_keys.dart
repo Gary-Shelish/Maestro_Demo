@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maestrohomescreen/lessons_tab/asset_player_widget.dart';
+import 'package:maestrohomescreen/levels/CNote_Test.dart';
+import 'package:maestrohomescreen/levels/WhiteKeyTests.dart';
+import 'package:maestrohomescreen/levels/incorrect.dart';
 import 'item.dart';
 
 class WhiteKeys extends StatefulWidget {
@@ -11,98 +15,40 @@ class WhiteKeys extends StatefulWidget {
 class _WhiteKeysState extends State<WhiteKeys> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('White Key/Basic Key Practice'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.grid_on),
-              ),
-              Tab(
-                icon: Icon(Icons.list),
-              ),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            // GridView tab content Widget
-            GridView.count(
-              // Items in row
-              crossAxisCount: 2,
-              // Vertical spacing between rows
-              mainAxisSpacing: 5.0,
-              // Horizontal spacing between columns
-              crossAxisSpacing: 5.0,
-              // Padding of GridView
-              padding: const EdgeInsets.all(5.0),
-              // The ratio between the width and height of items
-              childAspectRatio: 0.75,
-              // List of items widgets
-              children: items
-                  .map<Widget>((Item item) => _ItemGridCellWidget(item))
-                  .toList(),
-            ),
-            // ListView tab content Widget
-            ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int position) =>
-                    _ItemListCellWidget(items[position]))
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('White Key/Basic Key Practice'),
+      ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          ListView.builder(
+              shrinkWrap: true,
+              itemCount: items.length,
+              itemBuilder: (BuildContext context, int position) =>
+                  _ItemListCellWidget(items[position])),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CNoteTest()));
+              },
+              child: const Text('Test')),
+        ],
       ),
     );
-  }
-}
-
-class _ItemGridCellWidget extends StatelessWidget {
-  final Item _item;
-
-  _ItemGridCellWidget(this._item);
-
-  void _selectItem(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute<void>(
-          builder: (BuildContext context) => _ItemFullScreenWidget(_item),
-        ));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GridTile(
-        footer: GridTileBar(
-          title: Text(_item.name),
-          subtitle: Text(_item.description),
-          backgroundColor: Colors.black38,
-        ),
-        child: GestureDetector(
-          onTap: () => _selectItem(context),
-          child: Hero(
-            key: Key(_item.imageUrl),
-            tag: _item.name,
-            child: Image.network(
-              _item.imageUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ));
   }
 }
 
 class _ItemListCellWidget extends StatelessWidget {
   final Item _item;
 
-  _ItemListCellWidget(this._item);
+  const _ItemListCellWidget(this._item);
 
   void _selectItem(BuildContext context) {
     Navigator.push(
         context,
         MaterialPageRoute<void>(
-          builder: (BuildContext context) => _ItemFullScreenWidget(_item),
+          builder: (BuildContext context) => const AssetPlayerWidget(),
         ));
   }
 
@@ -113,7 +59,7 @@ class _ItemListCellWidget extends StatelessWidget {
 //      isThreeLine: true,
       title: Text(
         _item.name,
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 20,
         ),
@@ -122,41 +68,13 @@ class _ItemListCellWidget extends StatelessWidget {
       subtitle: Text(
         _item.description,
         maxLines: 3,
-        style: TextStyle(),
+        style: const TextStyle(),
       ),
-      leading: Hero(
-        key: Key(_item.imageUrl),
-        tag: _item.name,
-        child: Image.network(
-          _item.imageUrl,
-          width: 50,
-          height: 50,
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
-}
-
-class _ItemFullScreenWidget extends StatelessWidget {
-  final Item _item;
-
-  _ItemFullScreenWidget(this._item);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_item.name),
-      ),
-      body: SizedBox.expand(
-        child: Hero(
-          tag: _item.name,
-          child: Image.asset(
-            _item.imageUrl,
-            fit: BoxFit.cover,
-          ),
-        ),
+      leading: Image.network(
+        _item.imageUrl,
+        width: 50,
+        height: 50,
+        fit: BoxFit.cover,
       ),
     );
   }
@@ -164,7 +82,7 @@ class _ItemFullScreenWidget extends StatelessWidget {
 
 List<Item> items = [
   Item(
-    "https://3.files.edl.io/1990/19/10/21/160945-c17719dd-1c2a-45b1-be28-79f225bf878a.jpg",
+    "https://www.europianosnaples.com/wp-content/uploads/2018/02/piano-key-names.jpeg",
     "White Keys",
     """The first three and the most essential keys to learn when it comes to the white keys.""",
   ),

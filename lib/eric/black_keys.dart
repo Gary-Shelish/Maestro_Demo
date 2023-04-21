@@ -15,8 +15,8 @@ class _BlackKeysState extends State<BlackKeys> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Black Keys'),
-          bottom: TabBar(
+          title: const Text('Black Keys'),
+          bottom: const TabBar(
             tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.grid_on),
@@ -61,7 +61,7 @@ class _BlackKeysState extends State<BlackKeys> {
 class _ItemGridCellWidget extends StatelessWidget {
   final Item _item;
 
-  _ItemGridCellWidget(this._item);
+  const _ItemGridCellWidget(this._item);
 
   void _selectItem(BuildContext context) {
     Navigator.push(
@@ -96,7 +96,7 @@ class _ItemGridCellWidget extends StatelessWidget {
 class _ItemListCellWidget extends StatelessWidget {
   final Item _item;
 
-  _ItemListCellWidget(this._item);
+  const _ItemListCellWidget(this._item);
 
   void _selectItem(BuildContext context) {
     Navigator.push(
@@ -113,7 +113,7 @@ class _ItemListCellWidget extends StatelessWidget {
 //      isThreeLine: true,
       title: Text(
         _item.name,
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 20,
         ),
@@ -121,7 +121,7 @@ class _ItemListCellWidget extends StatelessWidget {
       subtitle: Text(
         _item.description,
         maxLines: 2,
-        style: TextStyle(),
+        style: const TextStyle(),
       ),
       leading: Hero(
         key: Key(_item.imageUrl),
@@ -140,7 +140,7 @@ class _ItemListCellWidget extends StatelessWidget {
 class _ItemFullScreenWidget extends StatelessWidget {
   final Item _item;
 
-  _ItemFullScreenWidget(this._item);
+  const _ItemFullScreenWidget(this._item);
 
   @override
   Widget build(BuildContext context) {

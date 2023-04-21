@@ -20,6 +20,11 @@ dependencies:
   flutter:
     sdk: flutter
   fluttertoast: ^8.1.2
+  shared_preferences: ^2.0.17
+  video_player: ^2.5.1
+  circular_countdown_timer: ^0.2.0
+  flutter_riverpod: ^1.0.4
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +55,7 @@ flutter:
    - images/Sheet Music Reading.jpg
    - images/piano-technique.jpg
    - images/Gogi.PNG
+   - videos/
    - assets/
 
   fonts: 

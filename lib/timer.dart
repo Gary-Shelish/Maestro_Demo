@@ -1,34 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maestrohomescreen/my_countdown_timer.dart';
+import 'package:maestrohomescreen/providers.dart';
 
-class Timer extends StatelessWidget {
+class Timer extends ConsumerStatefulWidget {
   const Timer({Key? key}) : super(key: key);
+
+  @override
+  ConsumerState<Timer> createState() => _TimerState();
+}
+
+class _TimerState extends ConsumerState<Timer> {
+  Duration? countDownDuration;
+
+  @override
+  void initState() {
+    super.initState();
+    // countDownDuration = const Duration(minutes: 60);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
       child: Align(
         alignment: Alignment.centerLeft,
-        child: Container(
-          width: 150,
-          color: Color(0xff2c2c2c),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const <Widget>[
-                Text('Hello', style: TextStyle(color: Colors.white)),
-                Text('Goodbye', style: TextStyle(color: Colors.white)),
-                Text('Sleepy Time', style: TextStyle(color: Colors.white)),
-                Text('Hello', style: TextStyle(color: Colors.white)),
-                Text('Goodbye', style: TextStyle(color: Colors.white)),
-                Text('Sleepy Time', style: TextStyle(color: Colors.white)),
-                Text('Hello', style: TextStyle(color: Colors.white)),
-                Text('Goodbye', style: TextStyle(color: Colors.white)),
-                Text('Sleepy Time', style: TextStyle(color: Colors.white)),
-              ],
+        child: Row(
+          children: [
+            Container(
+              width: 150,
+              color: const Color(0xff2c2c2c),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          countDownDuration = const Duration(minutes: 15);
+                        });
+                      },
+                      child: const Text('15 Minutes',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          countDownDuration = const Duration(minutes: 30);
+                        });
+                      },
+                      child: const Text('30 Minutes',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          countDownDuration = const Duration(minutes: 60);
+                        });
+                        ref
+                            .read(durationProvider)
+                            .updateDuration(const Duration(minutes: 60));
+                      },
+                      child: const Text('60 Minutes',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          countDownDuration = const Duration(minutes: 90);
+                        });
+                      },
+                      child: const Text('90 Minutes',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          countDownDuration = const Duration(minutes: 130);
+                        });
+                      },
+                      child: const Text('130 Minutes',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text('Custom',
+                          style: TextStyle(color: Colors.white)),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
+            if (countDownDuration == const Duration(minutes: 15))
+              const MyCountdownTimer(Duration(minutes: 15)),
+            if (countDownDuration == const Duration(minutes: 60))
+              const MyCountdownTimer(Duration(minutes: 60)),
+          ],
         ),
       ),
     );

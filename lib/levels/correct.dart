@@ -4,6 +4,7 @@ class Correct extends StatefulWidget {
   const Correct(this.nextPage, {Key? key}) : super(key: key);
 
   final Widget nextPage;
+  @override
   _CorrectState createState() => _CorrectState();
 }
 
@@ -15,15 +16,15 @@ class _CorrectState extends State<Correct> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Spacer(),
+          const Spacer(),
           const Text('Correct', style: TextStyle(fontSize: 50)),
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(
+              const Spacer(
                 flex: 2,
               ),
               ElevatedButton(
@@ -37,7 +38,7 @@ class _CorrectState extends State<Correct> {
                         MaterialPageRoute(
                             builder: (context) => widget.nextPage));
                   }),
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
             ],
           )
         ]),
