@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/levels/congradulations.dart';
 import 'package:maestrohomescreen/levels/correct.dart';
+import 'package:maestrohomescreen/levels/demo_final.dart';
 import 'package:maestrohomescreen/levels/incorrect.dart';
 import 'dart:math';
 
@@ -78,7 +79,7 @@ class _E_TestState extends State<E_Test> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Correct(Congradulations())));
+                                            const DemoFinal()));
                               }),
                   const Spacer(
                     flex: 2,
@@ -90,8 +91,7 @@ class _E_TestState extends State<E_Test> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        const Correct(Congradulations())));
+                                    builder: (context) => const DemoFinal()));
                           })
                       : (intValue == 1)
                           ? ElevatedButton(
@@ -133,7 +133,7 @@ class _E_TestState extends State<E_Test> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Correct(Congradulations())));
+                                            const DemoFinal()));
                               })
                           : ElevatedButton(
                               child: const Text('C'),

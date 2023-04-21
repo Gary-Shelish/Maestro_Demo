@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/lessons_tab/asset_player_widget.dart';
 import 'package:maestrohomescreen/levels/CNote_Test.dart';
+import 'package:maestrohomescreen/levels/C_Test.dart';
 import 'package:maestrohomescreen/levels/WhiteKeyTests.dart';
 import 'package:maestrohomescreen/levels/incorrect.dart';
 import 'item.dart';
@@ -30,7 +31,7 @@ class _WhiteKeysState extends State<WhiteKeys> {
           TextButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const CNoteTest()));
+                    MaterialPageRoute(builder: (context) => const CTest()));
               },
               child: const Text('Test')),
         ],
