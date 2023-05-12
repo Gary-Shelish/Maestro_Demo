@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maestrohomescreen/lessons_tab/lesson_card_selection.dart';
 import 'package:maestrohomescreen/timer.dart';
 import 'package:maestrohomescreen/songs.dart';
+import 'package:maestrohomescreen/practice.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -33,8 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         body: const TabBarView(children: [
           LessonCardSelection(),
-          Text("Practice",
-              style: TextStyle(fontSize: 25.0, color: Colors.white)),
+          Practice(),
           Songs(),
           Timer(),
           Text("GRAH", style: TextStyle(fontSize: 25.0, color: Colors.white))

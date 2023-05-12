@@ -3,23 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyCountdownTimer extends ConsumerStatefulWidget {
-  const MyCountdownTimer(this.countDownDuration, {Key? key}) : super(key: key);
-
+  const MyCountdownTimer(this.countDownDuration,
+      {Key? key, required this.onDurationSelected})
+      : super(key: key);
   final Duration countDownDuration;
-
+  final ValueChanged<Duration> onDurationSelected;
   @override
   ConsumerState<MyCountdownTimer> createState() => _MyCountdownTimerState();
 }
 
-class _MyCountdownTimerState extends ConsumerState<MyCountdownTimer> {
+class _MyCountdownTimerState extends ConsumerState<MyCountdownTimer>
+    with AutomaticKeepAliveClientMixin<MyCountdownTimer> {
   CountDownController countDownController = CountDownController();
-
+  bool _timerStarted = false;
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Expanded(
       child: Center(
         child: GestureDetector(
           onTap: () {
+            if (!_timerStarted) {
+              widget.onDurationSelected(widget.countDownDuration);
+              _timerStarted = true;
+            }
             countDownController.start();
           },
           child: CircularCountDownTimer(

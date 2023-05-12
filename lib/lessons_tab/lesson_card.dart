@@ -18,18 +18,21 @@ class LessonCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(
-            color: Colors.black,
-            child: IconButton(
-              iconSize: 150,
-              icon: Image.asset(image, height: 160, fit: BoxFit.cover),
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => next,
-                  )),
+          Expanded(
+            child: Container(
+              color: Colors.black,
+              child: IconButton(
+                iconSize: 150,
+                icon: Image.asset(image, height: 160, fit: BoxFit.cover),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => next,
+                    )),
+              ),
             ),
           ),
+
           Text(
             title,
             style: const TextStyle(

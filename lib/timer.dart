@@ -5,7 +5,6 @@ import 'package:maestrohomescreen/providers.dart';
 
 class Timer extends ConsumerStatefulWidget {
   const Timer({Key? key}) : super(key: key);
-
   @override
   ConsumerState<Timer> createState() => _TimerState();
 }
@@ -13,10 +12,10 @@ class Timer extends ConsumerStatefulWidget {
 class _TimerState extends ConsumerState<Timer> {
   Duration? countDownDuration;
 
-  @override
-  void initState() {
-    super.initState();
-    // countDownDuration = const Duration(minutes: 60);
+  void _onDurationSelected(Duration duration) {
+    setState(() {
+      countDownDuration = duration;
+    });
   }
 
   @override
@@ -31,7 +30,7 @@ class _TimerState extends ConsumerState<Timer> {
               width: 150,
               color: const Color(0xff2c2c2c),
               child: Padding(
-                padding: const EdgeInsets.only(left: 16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,10 +92,20 @@ class _TimerState extends ConsumerState<Timer> {
                 ),
               ),
             ),
-            if (countDownDuration == const Duration(minutes: 15))
-              const MyCountdownTimer(Duration(minutes: 15)),
-            if (countDownDuration == const Duration(minutes: 60))
-              const MyCountdownTimer(Duration(minutes: 60)),
+            // if (countDownDuration != null) MyCountdownTimer(countDownDuration!),
+            // if (countDownDuration == const Duration(minutes: 15))
+            //   const MyCountdownTimer(Duration(minutes: 15)),
+            // if (countDownDuration == const Duration(minutes: 60))
+            //   const MyCountdownTimer(Duration(minutes: 60)),
+            // if (countDownDuration == const Duration(minutes: 30))
+            //   const MyCountdownTimer(Duration(minutes: 30)),
+            // if (countDownDuration == const Duration(minutes: 90))
+            //   const MyCountdownTimer(Duration(minutes: 90)),
+            // if (countDownDuration == const Duration(minutes: 130))
+            //   const MyCountdownTimer(Duration(minutes: 130)),
+            if (countDownDuration != null)
+              MyCountdownTimer(countDownDuration!,
+                  onDurationSelected: _onDurationSelected)
           ],
         ),
       ),

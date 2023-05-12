@@ -25,6 +25,9 @@ dependencies:
   circular_countdown_timer: ^0.2.0
   flutter_riverpod: ^1.0.4
   url_launcher: ^6.1.10
+  flutter_piano_audio_detection: ^1.0.5
+  flutter_virtual_piano: ^0.0.9
+  piano: ^1.0.3
 
 dev_dependencies:
   flutter_test:

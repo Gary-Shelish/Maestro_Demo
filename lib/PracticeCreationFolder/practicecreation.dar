@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+class PracticeCreation extends StatelessWidget {
+  const PracticeCreation({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey.shade900,
+      ),
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.all(0.0),
+        child: Container(
+          color: const Color(0xff2c2c2c),
+          height: 350,
+          width: 320,
+          child: const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+                'Welcome to the IDIS Practice Creation tab. After you complete a lesson or chapter, you are meant to come here and create your own practice regimens for any given topic. There will be a few preset practice regimens for you to look through, use, and take inspiration from when creating your own regimens. The reason you will be creating your own regimens is because it will help you conscientiously understand what you are practicing, and what you need to do to practice it. The goal is to help you be more mindful of your learning and practicing so that you can improve more efficiently.',
+                style: TextStyle(color: Colors.white)),
+          ),
+        ),
+      ),
+    );
+  }
+}

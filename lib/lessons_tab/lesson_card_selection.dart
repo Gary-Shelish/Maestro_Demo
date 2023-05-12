@@ -29,7 +29,8 @@ class LessonCardSelection extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ))),
             SizedBox(
-              height: MediaQuery.of(context).size.height,
+              height: 420,
+              //MediaQuery.of(context).size.height,//
               child: GridView.count(
                 crossAxisCount: 3,
                 physics: const NeverScrollableScrollPhysics(),
@@ -42,20 +43,29 @@ class LessonCardSelection extends StatelessWidget {
                       next: WhiteKeys(),
                     ),
                   ),
-                  LessonCard(
-                    title: "Chord Recognition",
-                    image: "images/Chord Playing Image.jpg",
-                    next: ChordRecognition(),
+                  SizedBox(
+                    height: 6,
+                    child: LessonCard(
+                      title: "Chord Recognition",
+                      image: "images/Chord Playing Image.jpg",
+                      next: ChordRecognition(),
+                    ),
                   ),
-                  LessonCard(
-                    title: "Scales and Regimens",
-                    image: "images/Sheet Music Image.png",
-                    next: SheetMusicReading(),
+                  SizedBox(
+                    height: 6,
+                    child: LessonCard(
+                      title: "Scales and Regimens",
+                      image: "images/Sheet Music Image.png",
+                      next: SheetMusicReading(),
+                    ),
                   ),
-                  LessonCard(
-                    title: "Technique",
-                    image: "images/piano-technique.jpg",
-                    next: SheetMusicReading(),
+                  SizedBox(
+                    height: 6,
+                    child: LessonCard(
+                      title: "Work in Progress",
+                      image: "images/piano-technique.jpg",
+                      next: SheetMusicReading(),
+                    ),
                   ),
                 ],
               ),
