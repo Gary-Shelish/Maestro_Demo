@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="us.binarychaos.maestro">
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
    <application
         android:label="IDIS"
         android:name="${applicationName}"
