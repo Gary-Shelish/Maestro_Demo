@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:maestrohomescreen/Practice_Templates/Note_Recognition.dart';
 import 'package:maestrohomescreen/Practice_Templates/Piano.dart';
+import 'package:maestrohomescreen/Practice_Templates/Audio.dart';
+
 
 class Practice extends StatelessWidget {
   const Practice({Key? key}) : super(key: key);
@@ -40,6 +42,12 @@ class Practice extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Piano2()));
+                    }),
+                ElevatedButton(
+                    child: const Text('Audio'),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Audio()));
                     }),
               ]),
             ),
